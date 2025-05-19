@@ -4,61 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hosting on AWS S3</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: #ffeef4; /* rosa pastel */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding-bottom: 80px; /* espacio para el footer */
+      }
+
+      h1 {
+        color: #c2185b; /* fucsia intenso */
+        margin-top: 50px;
+      }
+
+      p {
+        font-size: 20px;
+        color: #ad1457; /* rosa fucsia oscuro */
+        font-weight: 600;
+        margin-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #f8bbd0; /* rosa claro */
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #f06292; /* rosa medio al pasar el mouse */
+      }
+
+      footer {
+        background-color: #880e4f; /* fucsia oscuro */
+        height: 75px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
-    <center>
-      <h1>UP AND RUNNING ON AWS S3 V4</h1>
-    </center>
+    <h1>UP AND RUNNING ON AWS S3 V4</h1>
     <p id="date"></p>
     <footer>
-      <center>
-      <a href='https://github.com/santos-pardos/'>
-        by @santos-pardos
+      <a href="https://github.com/elyzabeth19/" target="_blank">
+        by @Elizabeth Pesantes
       </a>
-        </center>
     </footer>
-  </body>
-  <style>
-    body {
-      text-align: center;
-      background-color: #f2f2f2;
-    }
 
-    h1 {
-      color: #333333;
-    }
+    <script>
+      function getCurrentDateTime() {
+        const currentDateTime = new Date();
+        const formattedDateTime =
+          "Your local datetime is: " +
+          currentDateTime.toDateString() +
+          ", " +
+          currentDateTime.toLocaleTimeString();
+        return formattedDateTime;
+      }
 
-    p {
-      font-size: 20px;
-      color: #dd0808;
-      font-weight: 600;
-    }
-    a{
-      text-decoration: none;
-      color: 'green';
-    }
-    footer{
-      background-color: 'black';
-      height: 75px;
-      width: 100%;
-      position: fixed;
-      bottom: 0px;
-    }
-  </style>
-  <script>
-    function getCurrentDateTime() {
-      var currentDateTime = new Date();
-      var formattedDateTime =
-        "Your local datetime is: " + 
-        currentDateTime.toDateString() +
-        ", " +
-        currentDateTime.toLocaleTimeString();
-      return formattedDateTime;
-    }
-    document.getElementById("date").innerHTML = getCurrentDateTime();
-
-    setInterval(function () {
       document.getElementById("date").innerHTML = getCurrentDateTime();
-    }, 1000);
-  </script>
+      setInterval(() => {
+        document.getElementById("date").innerHTML = getCurrentDateTime();
+      }, 1000);
+    </script>
+  </body>
 </html>
